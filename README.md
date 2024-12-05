@@ -41,18 +41,17 @@ npx nx generate @stellarlibs/nx-cdk:app --name genera-brand-workload-infra-asset
 
 need to pass the parameters for tenant and brand account's as required.
 
-|                                     | **Parameterstore values      |                                                  |
-| **Parameter Path**                  |   currently we use in code** |  **Description**                                 |
-|-------------------------------------|------------------------------|--------------------------------------------------|
-| `/genera/tenant/tenantId`           | `companyid`                  | Unique identifier for the tenant                 |
-| `/genera/tenant/tenantName`         | `companyname`                | Name of the tenant                               |
-| `/genera/tenant/tenantaccountid`    | `accounttenantid`            | Tenant account ID                                |
-| `manageraccountid`                  | `accounttenantid`            | Manager account ID                               |
-| `/genera/brand/ClientName`          | `clientname`                 | Name of the client                               |
-| `/genera/brand/ClientId`            | `clientid`                   | Unique identifier for the client                 |
-| `/genera/brand/BrandName`           | `brandname`                  | Name of the brand                                |
-| `/genera/brand/BrandId`             | `brandid`                    | Unique identifier for the brand                  |
-| `/genera/brand/brandaccountid`      | `accountbrandid`             | Brand account ID                                 |
+| **Parameter Path**                  |**Parameterstore values in code** |  **Description**                                 |
+|-------------------------------------|----------------------------------|--------------------------------------------------|
+| `/genera/tenant/tenantId`           | `companyid`                      | Unique identifier for the tenant                 |
+| `/genera/tenant/tenantName`         | `companyname`                    | Name of the tenant                               |
+| `/genera/tenant/tenantaccountid`    | `accounttenantid`                | Tenant account ID                                |
+| `manageraccountid`                  | `accounttenantid`                | Manager account ID                               |
+| `/genera/brand/ClientName`          | `clientname`                     | Name of the client                               |
+| `/genera/brand/ClientId`            | `clientid`                       | Unique identifier for the client                 |
+| `/genera/brand/BrandName`           | `brandname`                      | Name of the brand                                |
+| `/genera/brand/BrandId`             | `brandid`                        | Unique identifier for the brand                  |
+| `/genera/brand/brandaccountid`      | `accountbrandid`                 | Brand account ID                                 |
 
 
 ----
