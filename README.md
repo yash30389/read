@@ -45,8 +45,8 @@ We need to pass the required parameters while creating the tenant and brand acco
 |-------------------------------------|----------------------------------|--------------------------------------------------|
 | `/genera/tenant/tenantId`           | `companyid`                      | Unique identifier for the tenant                 |
 | `/genera/tenant/tenantName`         | `companyname`                    | Name of the tenant                               |
-| `/genera/tenant/tenantaccountid`    | `accounttenantid`                | Tenant account ID                                |
-| `manageraccountid`                  | `accounttenantid`                | Manager account ID                               |
+| `/genera/tenant/tenantaccountid`    | `accounttenantid`                | AWS Tenant account ID                            |
+| `manageraccountid`                  | `accounttenantid`                | AWS Manager account ID                           |
 | `/genera/brand/ClientName`          | `clientname`                     | Name of the client                               |
 | `/genera/brand/ClientId`            | `clientid`                       | Unique identifier for the client                 |
 | `/genera/brand/BrandName`           | `brandname`                      | Name of the brand                                |
