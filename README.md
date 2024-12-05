@@ -41,8 +41,8 @@ npx nx generate @stellarlibs/nx-cdk:app --name genera-brand-workload-infra-asset
 
 need to pass the parameters for tenant and brand account's as required.
 
-| **Parameter Path**                  | **Parameterstore values**    | **Description**                                  |
-|                                     | **currently we use in code** |                                                  |
+|                                     | **Parameterstore values      |                                                  |
+| **Parameter Path**                  |   currently we use in code** |  **Description**                                 |
 |-------------------------------------|------------------------------|--------------------------------------------------|
 | `/genera/tenant/tenantId`           | `companyid`                  | Unique identifier for the tenant                 |
 | `/genera/tenant/tenantName`         | `companyname`                | Name of the tenant                               |
