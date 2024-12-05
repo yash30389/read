@@ -1,10 +1,7 @@
-
-
 # Default Infra Setup Guide
 ## Overview
 This guide provides steps to set up the infrastructure for StackSet deployment across tenant and brand workload accounts using NX and AWS CDK. The setup includes generating projects, synthesizing infrastructure code, deploying StackSets, and adding parameters to Parameter Store for each account.
 
-## Commands
 
 ### Deploy Default Infra
 To deploy the default infrastructure, execute the following command:
@@ -12,24 +9,23 @@ To deploy the default infrastructure, execute the following command:
 npx nx deploy default-infra --configuration=unstable --require-approval never --profile AWSAdministratorAccess-149536462679
 ```
 
----
+---------
 
 # Steps for stackset deploy on tenant and brand account's
 
-## Step 1: Generate StackSet Wrapper Projects
-Generate the StackSet wrapper projects for deployment on each tenant and brand workload's.
+## Step 1: Generate StackSet Wrapper
+Generate the StackSet wrapper's for deployment of stackset.
 
-Commands:
 ```bash
 npx nx generate @ago-dev/nx-aws-cdk-v2:application --name genera-tenant-stackset-wrapper
 npx nx generate @ago-dev/nx-aws-cdk-v2:application --name genera-brand-stackset-wrapper
 ```
 
-## step-2:
--------
+## step 2: Generate Workload Infra Assets
 Generate "genera-tenant-workload-infra-assets","genera-brand-workload-infra-assets" for synth and deploy.
 
 Install required pacjages:
+
 ```bahs
 npm install @stellarlibs/nx-cdk
 ```
@@ -40,18 +36,42 @@ npx nx generate @stellarlibs/nx-cdk:app --name genera-tenant-workload-infra-asse
 npx nx generate @stellarlibs/nx-cdk:app --name genera-brand-workload-infra-assets
 ```
 
-for synth tenant and brnad workloads
+# Prerequisites
 
-tenant command:
+need to pass the parameters for tenant and brand account's as required.
+
+----
+## Step 3: Synthesize and Deploy Workloads
+
+# Tenant Workload
+## Synthesize the infrastructure:
 ```bash
 npx nx synth genera-tenant-workload-infra-assets
-npx cdk-assets publish --path dist/packages/genera-tenant-workload-infra-assets/tenant-workload.assets.json --profile AWSAdministratorAccess-{devopsaccount's}
-npx nx deploy genera-tenant-stackset-wrapper --require-approval never --profile AWSAdministratorAccess-149536462679
 ```
 
-brand command:
+## Publish the assets on devops accounts:
+```bash
+npx cdk-assets publish --path dist/packages/genera-tenant-workload-infra-assets/tenant-workload.assets.json --profile devopsaccount's
+```
+
+## Deploy the StackSet wrapper:
+```bash
+npx nx deploy genera-tenant-stackset-wrapper --require-approval never --profile devopsaccount's
+```
+
+# Brand Workload
+## Synthesize the infrastructure:
 ```bash
 npx nx synth genera-brand-workload-infra-assets
-npx cdk-assets publish --path dist/packages/genera-brand-workload-infra-assets/brand-workload.assets.json --profile AWSAdministratorAccess-{devopsaccount's}
-npx nx deploy genera-brand-stackset-wrapper --require-approval never --profile AWSAdministratorAccess-149536462679
 ```
+
+## Publish the assets:
+```bash
+npx cdk-assets publish --path dist/packages/genera-brand-workload-infra-assets/brand-workload.assets.json --profile devopsaccount's
+```
+
+## Deploy the StackSet wrapper:
+```bash
+npx nx deploy genera-brand-stackset-wrapper --require-approval never --profile AWSAdministratorAccess-{devopsaccount's}
+```
+
