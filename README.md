@@ -7,7 +7,7 @@ This guide provides steps to set up the infrastructure for StackSet deployment a
 ### Deploy Default Infra
 To deploy the default infrastructure, execute the following command:
 ```bash
-npx nx deploy default-infra --configuration=unstable --require-approval never --profile devopsaccount's
+npx nx deploy default-infra --configuration=unstable --require-approval never --profile devopsaccount
 ```
 
 ---------
@@ -65,12 +65,12 @@ npx nx synth genera-tenant-workload-infra-assets
 
 ## Publish the assets on devops accounts:
 ```bash
-npx cdk-assets publish --path dist/packages/genera-tenant-workload-infra-assets/tenant-workload.assets.json --profile devopsaccount's
+npx cdk-assets publish --path dist/packages/genera-tenant-workload-infra-assets/tenant-workload.assets.json --profile devopsaccount
 ```
 
 ## Deploy the StackSet wrapper:
 ```bash
-npx nx deploy genera-tenant-stackset-wrapper --require-approval never --profile devopsaccount's
+npx nx deploy genera-tenant-stackset-wrapper --require-approval never --profile devopsaccount
 ```
 
 # Brand Workload
@@ -81,11 +81,11 @@ npx nx synth genera-brand-workload-infra-assets
 
 ## Publish the assets:
 ```bash
-npx cdk-assets publish --path dist/packages/genera-brand-workload-infra-assets/brand-workload.assets.json --profile devopsaccount's
+npx cdk-assets publish --path dist/packages/genera-brand-workload-infra-assets/brand-workload.assets.json --profile devopsaccount
 ```
 
 ## Deploy the StackSet wrapper:
 ```bash
-npx nx deploy genera-brand-stackset-wrapper --require-approval never --profile AWSAdministratorAccess-{devopsaccount's}
+npx nx deploy genera-brand-stackset-wrapper --require-approval never --profile devopsaccount
 ```
 
