@@ -1,7 +1,7 @@
 # Default Infra Setup Guide
 
 ## Overview
-This guide provides steps to set up the infrastructure for StackSet deployment across tenant and brand workload accounts using NX and AWS CDK. The setup includes generating projects, synthesizing infrastructure code, deploying StackSets, and adding parameters to Parameter Store for each account.
+This guide provides steps to set up the infrastructure for StackSet deployment across tenant and brand workload account's. The setup includes generating project's, synthesizing infrastructure code, deploying StackSet's and adding parameters to ParameterStore for each account.
 
 
 ### Deploy Default Infra
@@ -39,7 +39,7 @@ npx nx generate @stellarlibs/nx-cdk:app --name genera-brand-workload-infra-asset
 
 # Prerequisites
 
-need to pass the parameters for tenant and brand account's as required.
+We need to pass the required parameters while creating the tenant and brand account's.
 
 | **Parameter Path**                  |**Parameterstore values in code** |  **Description**                                 |
 |-------------------------------------|----------------------------------|--------------------------------------------------|
