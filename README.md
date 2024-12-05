@@ -25,9 +25,9 @@ npx nx generate @ago-dev/nx-aws-cdk-v2:application --name genera-brand-stackset-
 ## step 2: Generate Workload Infra Assets
 Generate "genera-tenant-workload-infra-assets","genera-brand-workload-infra-assets" for synth and deploy.
 
-Install required pacjages:
+Install required packages:
 
-```bahs
+```bash
 npm install @stellarlibs/nx-cdk
 ```
 
@@ -39,14 +39,14 @@ npx nx generate @stellarlibs/nx-cdk:app --name genera-brand-workload-infra-asset
 
 # Prerequisites
 
-We need to pass the required parameters while creating the tenant and brand account's.
+We need to create required parameters from AWS Parameterstore while creating tenant and brand AWS accountS.
 
 | **Parameter Path**                  |**Parameterstore values in code** |  **Description**                                 |
 |-------------------------------------|----------------------------------|--------------------------------------------------|
 | `/genera/tenant/tenantId`           | `companyid`                      | Unique identifier for the tenant                 |
 | `/genera/tenant/tenantName`         | `companyname`                    | Name of the tenant                               |
 | `/genera/tenant/tenantaccountid`    | `accounttenantid`                | AWS Tenant account ID                            |
-| `manageraccountid`                  | `accounttenantid`                | AWS Manager account ID                           |
+| `manageraccountid`                  | `accounttenantid`                | AWS brand Manager account ID                     |
 | `/genera/brand/ClientName`          | `clientname`                     | Name of the client                               |
 | `/genera/brand/ClientId`            | `clientid`                       | Unique identifier for the client                 |
 | `/genera/brand/BrandName`           | `brandname`                      | Name of the brand                                |
